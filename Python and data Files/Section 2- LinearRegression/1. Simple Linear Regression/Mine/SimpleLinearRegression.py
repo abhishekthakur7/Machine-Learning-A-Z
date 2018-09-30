@@ -21,7 +21,9 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 1/3, rando
 #Fitting data to simple linear regression model
 from sklearn.linear_model import LinearRegression
 regressor= LinearRegression()
-regressor.fit(X_train, y_train)
+regressor.fit(X_train, y_train) #this will create a unique line equation, based on train data 
+
+
 #predicting the test set results
 y_prid = regressor.predict(X_test)
 
@@ -31,10 +33,15 @@ plt.plot(X_train, regressor.predict(X_train), color='blue') #Compare real salari
 plt.xlabel('Experience')
 plt.ylabel('Salary($)')
 plt.title('Experience vs Salary($) (Training Set)')
+plt.show()
+
 
 #Visualizing test set results
 plt.scatter(X_test, y_test, color='green')
-plt.plot(X_train, regressor.predict(X_train), color='blue') #no change in values, because we are testing our trained line w.r.t test data, whether our plotted line is ftting the test data or not
+
+#doen't matter if you use X_train or X_test as line equation being used to predict will remain the same for "regressor"
+plt.plot(X_train, regressor.predict(X_train), color='blue') 
 plt.xlabel('Experience')
 plt.ylabel('Salary($)')
 plt.title('Experience vs Salary($) (Test Set)')
+plt.show()
