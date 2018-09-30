@@ -37,7 +37,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 # and salary and age are not scalable w.r.t. each other which means in eclidean distance, salary will dominate age
 #because salary values are much larger than age values
 #scaling is of two types - 1. Standardisation 2. Normalization
-#convert values to +1 -> -1 range
+#convert values to +1 -> -1 range -> we are using Standardisation
 from sklearn.preprocessing import StandardScaler
 
 sc_X = StandardScaler()
